@@ -1,7 +1,7 @@
 import Desktop from './Desktop'
 import { NavigationLink } from '@/types'
 
-const navigationLinks: NavigationLink[] = [
+export const navigationLinks: NavigationLink[] = [
   { title: 'Filmes', link: '/movie' },
   { title: 'Séries', link: '/tv' },
   { title: 'Pessoas', link: '/person' }
