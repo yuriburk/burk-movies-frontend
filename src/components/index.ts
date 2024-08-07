@@ -1,3 +1,5 @@
 import Navigation from './Navigation'
+import BannerSearch from './BannerSearch'
 
-export { Navigation }
+export { Navigation, BannerSearch }
+export * from './common'

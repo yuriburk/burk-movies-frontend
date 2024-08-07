@@ -1,7 +1,9 @@
+import { BannerSearch } from '@/components'
+
 export default function Home() {
   return (
-    <main className="flex items-center justify-center w-screen h-screen">
-      <h1>Burk Movies</h1>
+    <main className="flex justify-center w-screen h-screen max-container">
+      <BannerSearch />
     </main>
   )
 }

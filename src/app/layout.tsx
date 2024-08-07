@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Source_Sans_3 } from 'next/font/google'
 import { Navigation } from '@/components'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
+const source = Source_Sans_3({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Burk Movies',
@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt">
-      <body className={inter.className}>
+      <body className={source.className}>
         <Navigation />
         {children}
       </body>
