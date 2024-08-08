@@ -1,10 +1,14 @@
-import { BannerSearch, Trending } from '@/components/sections'
+import { SearchSection, TrendingSection } from '@/components/sections'
+import TrendingService from '@/services/trending'
 
-export default function Home() {
+export default async function Home() {
+  const trending = await TrendingService.getAll()
+  console.log(trending)
+
   return (
-    <main className="flex justify-center w-screen h-screen max-container">
-      <BannerSearch />
-      <Trending />
+    <main className="flex flex-col w-screen h-screen max-container">
+      <SearchSection />
+      <TrendingSection trending={trending.results} />
     </main>
   )
 }

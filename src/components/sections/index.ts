@@ -1,4 +1,4 @@
-import BannerSearch from './BannerSearch'
-import Trending from './Trending'
+import SearchSection from './SearchSection'
+import TrendingSection from './TrendingSection'
 
-export { BannerSearch, Trending }
+export { SearchSection, TrendingSection }

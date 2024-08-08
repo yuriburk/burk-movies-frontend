@@ -3,17 +3,15 @@ import Image from 'next/image'
 import banner from '../../../../public/images/banner.webp'
 import { Search } from '../../common'
 
-const BannerSearch = () => {
-  const onSearch = (text: string) => {
-    console.log({ text })
-  }
+const SearchSection = () => {
+  const onSearch = () => {}
 
   return (
     <section className="max-h-[300px] relative text-white">
       <Image
         src={banner}
         alt="Banner com campo de pesquisa"
-        className="max-h-[300px] object-cover"
+        className="h-[300px] object-cover"
       />
       <div className="flex flex-col justify-center gap-12 absolute inset-0 py-8 px-10">
         <div>
@@ -31,4 +29,4 @@ const BannerSearch = () => {
   )
 }
 
-export default BannerSearch
+export default SearchSection
