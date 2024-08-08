@@ -12,6 +12,8 @@
     "cypress:component": "cypress run --component"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.51.23",
+    "axios": "^1.7.3",
     "next": "14.2.5",
     "nextjs-toploader": "^1.6.12",
     "react": "^18",

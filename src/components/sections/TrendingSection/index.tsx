@@ -1,17 +1,49 @@
-import { Trending } from '@/domain/Trending'
+'use client'
+import { useState } from 'react'
+import { Card, Selector } from '@/components/common'
+import { Requests, TrendingEnum, TrendingOption } from '@/types'
+import { Movie } from '@/domain/Movie'
+import useTrending from '@/hooks/useTrending'
 
-export type TrendingSectionProps = {
-  trending: Trending[]
+const trendingOptions = Object.keys(TrendingEnum)
+
+type TrendingSectionProps = {
+  initialMovies: Requests<Movie[]>
 }
 
-const TrendingSection = ({ trending }: TrendingSectionProps) => (
-  <section>
-    {trending.map((t) => (
-      <div key={t.id}>
-        <h3>{t.title}</h3>
+const TrendingSection = ({ initialMovies }: TrendingSectionProps) => {
+  const [selectedOption, setSelectedOption] = useState<TrendingOption>('Hoje')
+
+  const { data } = useTrending({
+    option: TrendingEnum[selectedOption],
+    initialMovies
+  })
+
+  return (
+    <section id="trending" className="flex flex-col justify-center gap-5 p-8">
+      <div className="flex items-center gap-5">
+        <h2 className="font-medium text-2xl">Tendências</h2>
+        <Selector
+          options={trendingOptions}
+          selectedOption={selectedOption}
+          onSelect={(option) => {
+            setSelectedOption(option as TrendingOption)
+          }}
+        />
       </div>
-    ))}
-  </section>
-)
+      <div className="flex overflow-x-scroll gap-3">
+        {data?.results?.map((t) => (
+          <Card
+            key={t.id}
+            title={t.title}
+            image={t.image}
+            popularity={t.popularity}
+            date={t.date}
+          />
+        ))}
+      </div>
+    </section>
+  )
+}
 
 export default TrendingSection

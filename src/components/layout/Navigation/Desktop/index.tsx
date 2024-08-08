@@ -12,7 +12,7 @@ const Desktop = ({ navigationLinks }: DesktopProps) => {
       <div className="flex justify-between items-center h-16 px-10 max-container">
         <div className="flex items-center gap-8">
           <Logo />
-          <ul className="flex gap-6">
+          <ul className="flex gap-8">
             {navigationLinks.map((navigationLink) => (
               <li key={navigationLink.title}>
                 <Link href={navigationLink.link}>{navigationLink.title}</Link>
@@ -20,7 +20,7 @@ const Desktop = ({ navigationLinks }: DesktopProps) => {
             ))}
           </ul>
         </div>
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-8">
           <p className="border border-white px-1 py-0.5 rounded">PT</p>
           <Link href="/">Entrar</Link>
           <Link href="/">Junte-se ao TMDB</Link>

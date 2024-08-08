@@ -8,7 +8,7 @@ describe('<Search />', () => {
 
     cy.get('input[type="search"]').should('exist')
 
-    cy.get('button').contains('Search').should('exist')
+    cy.get('button').contains('Pesquisar').should('exist')
 
     cy.get('input[type="search"]').should(
       'have.attr',
@@ -24,7 +24,7 @@ describe('<Search />', () => {
     cy.mount(<Search onSubmit={onSubmit} placeholder="Search..." />)
 
     cy.get('input[type="search"]').type(searchText)
-    cy.get('button').contains('Search').click()
+    cy.get('button').contains('Pesquisar').click()
 
     cy.get('@onSubmit').should('have.been.calledWith', searchText)
   })

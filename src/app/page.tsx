@@ -1,13 +1,14 @@
 import { SearchSection, TrendingSection } from '@/components/sections'
-import TrendingService from '@/services/trending'
+import MovieService from '@/services/movie'
+import { TrendingEnum } from '@/types'
 
 export default async function Home() {
-  const trending = await TrendingService.getAll()
+  const trending = await MovieService.getTrending(TrendingEnum.Hoje)
 
   return (
     <main className="flex flex-col w-screen h-screen max-container">
       <SearchSection />
-      <TrendingSection trending={trending.results} />
+      <TrendingSection initialMovies={trending} />
     </main>
   )
 }

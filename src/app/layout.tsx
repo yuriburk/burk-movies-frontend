@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Source_Sans_3 } from 'next/font/google'
 import NextTopLoader from 'nextjs-toploader'
 import { Navigation } from '@/components/layout'
+import Providers from './providers'
 import './globals.css'
 
 const source = Source_Sans_3({ subsets: ['latin'] })
@@ -20,8 +21,10 @@ export default function RootLayout({
     <html lang="pt">
       <body className={source.className}>
         <NextTopLoader />
-        <Navigation />
-        {children}
+        <Providers>
+          <Navigation />
+          {children}
+        </Providers>
       </body>
     </html>
   )

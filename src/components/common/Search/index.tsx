@@ -33,7 +33,7 @@ const Search = ({ onSubmit, placeholder }: SearchProps) => {
         onKeyUp={onPressKey}
       />
       <Button className="text-base" onClick={handleSubmit}>
-        Search
+        Pesquisar
       </Button>
     </div>
   )
