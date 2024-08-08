@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { NavigationLink } from '@/types'
-import Logo from '@/components/common/Logo'
+import { Logo } from '@/components/common'
 
 type DesktopProps = {
   navigationLinks: NavigationLink[]

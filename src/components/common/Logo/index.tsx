@@ -14,8 +14,8 @@ const Logo = () => (
           x2="100%"
           y2="100%"
         >
-          <stop stopColor="#00ff8f" offset="0%"></stop>
-          <stop stopColor="#00a1ff" offset="100%"></stop>
+          <stop stopColor="#1ed5a9" offset="0%"></stop>
+          <stop stopColor="#01b4e4" offset="100%"></stop>
         </linearGradient>
       </defs>
       <g fill="url(#SvgjsLinearGradient4781)">

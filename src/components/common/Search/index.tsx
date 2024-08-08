@@ -1,6 +1,6 @@
 'use client'
 import { useRef } from 'react'
-import { Button } from '@/components'
+import { Button } from '@/components/common'
 
 type SearchProps = {
   onSubmit: (text: string) => void
