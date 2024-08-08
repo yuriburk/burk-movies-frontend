@@ -1,7 +1,6 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import { NavigationLink } from '@/types'
-import logoDesktop from '../../../../public/images/logo-desktop.png'
+import Logo from '@/components/common/Logo'
 
 type DesktopProps = {
   navigationLinks: NavigationLink[]
@@ -12,12 +11,7 @@ const Desktop = ({ navigationLinks }: DesktopProps) => {
     <div className="bg-primary text-white font-medium">
       <div className="flex justify-between items-center h-16 px-10 max-container">
         <div className="flex items-center gap-8">
-          <Image
-            src={logoDesktop}
-            alt="Logo Burk Movies"
-            width={130}
-            height={45}
-          />
+          <Logo />
           <ul className="flex gap-6">
             {navigationLinks.map((navigationLink) => (
               <li key={navigationLink.title}>
