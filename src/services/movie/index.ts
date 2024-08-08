@@ -5,6 +5,12 @@ class MovieService {
   static async getTrending(
     trendingOption: TrendingEnum
   ): Promise<Requests<Movie[]>> {
+    await new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(true)
+      }, 1000)
+    })
+
     const result = await fetch(
       `${process.env.NEXT_PUBLIC_API_LINK}/trending?time=${trendingOption}`
     )

@@ -1,5 +1,7 @@
 'use client'
-type SelectorProps = {
+import { motion } from 'framer-motion'
+
+export type SelectorProps = {
   options: string[]
   selectedOption: string
   onSelect: (option: string) => void
@@ -21,7 +23,10 @@ const Selector = ({ options, selectedOption, onSelect }: SelectorProps) => {
             {option}
           </span>
           {option === selectedOption && (
-            <div className="absolute bg-primary w-auto h-full inset-0 -z-10 rounded-full" />
+            <motion.div
+              className="absolute bg-primary w-auto h-full inset-0 -z-10 rounded-full"
+              layoutId="option"
+            />
           )}
         </div>
       ))}

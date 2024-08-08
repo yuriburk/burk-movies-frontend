@@ -1,14 +1,18 @@
 import { SearchSection, TrendingSection } from '@/components/sections'
-import MovieService from '@/services/movie'
-import { TrendingEnum } from '@/types'
+import { prefetchTrending } from '@/hooks/useTrending/prefetch'
+import { HydrationBoundary } from '@tanstack/react-query'
 
 export default async function Home() {
-  const trending = await MovieService.getTrending(TrendingEnum.Hoje)
+  const {
+    props: { dehydratedTrendingState }
+  } = await prefetchTrending()
 
   return (
     <main className="flex flex-col w-screen h-screen max-container">
       <SearchSection />
-      <TrendingSection initialMovies={trending} />
+      <HydrationBoundary state={dehydratedTrendingState}>
+        <TrendingSection />
+      </HydrationBoundary>
     </main>
   )
 }
