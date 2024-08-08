@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
-import banner from '../../../public/images/banner.webp'
-import { Search } from '../common'
+import banner from '../../../../public/images/banner.webp'
+import { Search } from '../../common'
 
 const BannerSearch = () => {
   const onSearch = (text: string) => {

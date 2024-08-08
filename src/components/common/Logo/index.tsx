@@ -1,5 +1,7 @@
+import Link from 'next/link'
+
 const Logo = () => (
-  <div className="flex items-center gap-1">
+  <Link className="flex items-center gap-1" href="/">
     <svg
       width="35"
       height="35"
@@ -34,7 +36,7 @@ const Logo = () => (
     <h1 className="font-extrabold text-xl bg-gradient-to-r from-green to-blue bg-clip-text text-transparent">
       Burk Movies
     </h1>
-  </div>
+  </Link>
 )
 
 export default Logo

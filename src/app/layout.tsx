@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { Source_Sans_3 } from 'next/font/google'
-import { Navigation } from '@/components'
+import { Navigation } from '@/components/layout'
 import './globals.css'
 
 const source = Source_Sans_3({ subsets: ['latin'] })

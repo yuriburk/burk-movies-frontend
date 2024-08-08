@@ -1,5 +1,5 @@
-import { navigationLinks } from '@/components/Navigation'
-import Desktop from '@/components/Navigation/Desktop'
+import { navigationLinks } from '@/components/layout/Navigation'
+import Desktop from '@/components/layout/Navigation/Desktop'
 
 describe('<Desktop />', () => {
   it('should be able to render the desktop menu navigation', () => {
