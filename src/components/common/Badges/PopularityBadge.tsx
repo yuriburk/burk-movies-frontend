@@ -19,7 +19,7 @@ const PopularityBadge = ({ popularity }: PopularityBadgeProps) => {
   const popularityRounded = roundPopularity(popularity)
 
   return (
-    <div className="flex items-center justify-center relative bg-primaryBackground text-white rounded-full w-9 h-9 p-2">
+    <div className="flex items-center justify-center relative bg-primary-background text-white rounded-full w-9 h-9 p-2">
       <svg viewBox="0 0 36 36" className="absolute h-8 w-8">
         <path
           d="M18 2.0845

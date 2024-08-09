@@ -14,7 +14,7 @@ const Carousel = ({
   cardsProps: { items, isLoading }
 }: CarouselProps) => (
   <div className="flex flex-col justify-center gap-5 p-8">
-    <div className="flex items-center gap-5">
+    <div className="flex flex-wrap items-center gap-5">
       <h2 className="font-medium text-2xl">{title}</h2>
       {selectorProps && (
         <Selector

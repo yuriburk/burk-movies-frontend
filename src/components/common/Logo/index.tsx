@@ -1,26 +1,22 @@
 import Link from 'next/link'
 
-const Logo = () => (
+type LogoProps = { id: string; width: number; height: number }
+
+const Logo = ({ id, width, height }: LogoProps) => (
   <Link className="flex items-center gap-1" href="/">
     <svg
-      width="35"
-      height="35"
+      width={width}
+      height={height}
       viewBox="0 0 94 94"
       xmlns="http://www.w3.org/2000/svg"
     >
       <defs>
-        <linearGradient
-          id="SvgjsLinearGradient4781"
-          x1="0%"
-          y1="0%"
-          x2="100%"
-          y2="100%"
-        >
+        <linearGradient id={id} x1="0%" y1="0%" x2="100%" y2="100%">
           <stop stopColor="#1ed5a9" offset="0%"></stop>
           <stop stopColor="#01b4e4" offset="100%"></stop>
         </linearGradient>
       </defs>
-      <g fill="url(#SvgjsLinearGradient4781)">
+      <g fill={`url(#${id})`}>
         <rect x="0" y="0" width="94" height="94" rx="10" ry="10"></rect>
       </g>
       <g
@@ -33,7 +29,7 @@ const Logo = () => (
         <path d="M38.478,65.917c0.154,0.089,0.327,0.134,0.5,0.134s0.346-0.044,0.5-0.134l24.51-14.151c0.31-0.179,0.5-0.509,0.5-0.866s-0.19-0.688-0.5-0.866l-24.51-14.15c-0.309-0.179-0.691-0.179-1,0c-0.31,0.179-0.5,0.509-0.5,0.866v28.301C37.978,65.409,38.168,65.739,38.478,65.917z M39.978,38.482L61.487,50.9l-21.51,12.419V38.482z"></path>
       </g>
     </svg>
-    <h1 className="font-extrabold text-xl bg-gradient-to-r from-primaryColor to-secondaryColor bg-clip-text text-transparent">
+    <h1 className="font-extrabold text-xl bg-gradient-to-r from-primary-color to-secondary-color bg-clip-text text-transparent">
       Burk Movies
     </h1>
   </Link>

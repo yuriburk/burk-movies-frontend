@@ -9,7 +9,7 @@ const CinemaSection = () => {
   return (
     <section
       id="cinema"
-      className="relative bg-primaryBackground bg-opacity-80 text-white"
+      className="relative bg-primary-background bg-opacity-80 text-white"
     >
       {data?.results.length && (
         <Image

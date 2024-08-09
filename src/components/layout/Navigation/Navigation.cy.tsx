@@ -1,9 +1,9 @@
 import { navigationLinks } from '@/components/layout/Navigation'
-import Desktop from '@/components/layout/Navigation/Desktop'
+import Navigation from '@/components/layout/Navigation'
 
-describe('<Desktop />', () => {
+describe('<Navigation />', () => {
   it('should be able to render the desktop menu navigation', () => {
-    cy.desktopViewport().mount(<Desktop navigationLinks={navigationLinks} />)
+    cy.desktopViewport().mount(<Navigation />)
 
     navigationLinks.forEach((navigationLink) => {
       cy.get(`a[href="${navigationLink.link}"`).should('exist')
