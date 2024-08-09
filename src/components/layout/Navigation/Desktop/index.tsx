@@ -8,7 +8,7 @@ type DesktopProps = {
 
 const Desktop = ({ navigationLinks }: DesktopProps) => {
   return (
-    <div className="bg-primary text-white font-medium">
+    <div className="bg-primaryBackground text-white font-medium">
       <div className="flex justify-between items-center h-16 px-10 max-container">
         <div className="flex items-center gap-8">
           <Logo />

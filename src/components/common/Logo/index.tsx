@@ -33,7 +33,7 @@ const Logo = () => (
         <path d="M38.478,65.917c0.154,0.089,0.327,0.134,0.5,0.134s0.346-0.044,0.5-0.134l24.51-14.151c0.31-0.179,0.5-0.509,0.5-0.866s-0.19-0.688-0.5-0.866l-24.51-14.15c-0.309-0.179-0.691-0.179-1,0c-0.31,0.179-0.5,0.509-0.5,0.866v28.301C37.978,65.409,38.168,65.739,38.478,65.917z M39.978,38.482L61.487,50.9l-21.51,12.419V38.482z"></path>
       </g>
     </svg>
-    <h1 className="font-extrabold text-xl bg-gradient-to-r from-green to-blue bg-clip-text text-transparent">
+    <h1 className="font-extrabold text-xl bg-gradient-to-r from-primaryColor to-secondaryColor bg-clip-text text-transparent">
       Burk Movies
     </h1>
   </Link>

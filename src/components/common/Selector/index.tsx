@@ -13,18 +13,18 @@ const Selector = ({ options, selectedOption, onSelect }: SelectorProps) => {
   }
 
   return (
-    <div className="flex border-primary border rounded-full cursor-pointer">
+    <div className="flex border-primaryBackground border rounded-full cursor-pointer">
       {options.map((option) => (
         <div key={option} className="relative px-5 py-1">
           <span
-            className={`font-medium ${option === selectedOption && 'bg-gradient-to-r from-green to-blue bg-clip-text text-transparent'}`}
+            className={`font-medium ${option === selectedOption && 'bg-gradient-to-r from-primaryColor to-secondaryColor bg-clip-text text-transparent'}`}
             onClick={() => handleSelect(option)}
           >
             {option}
           </span>
           {option === selectedOption && (
             <motion.div
-              className="absolute bg-primary w-auto h-full inset-0 -z-10 rounded-full"
+              className="absolute bg-primaryBackground w-auto h-full inset-0 -z-10 rounded-full"
               layoutId="option"
             />
           )}
