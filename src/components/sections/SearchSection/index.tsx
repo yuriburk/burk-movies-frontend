@@ -1,16 +1,11 @@
 'use client'
 import Image from 'next/image'
-import { useRouter } from 'next/navigation'
 import { Search } from '@/components/common'
+import useProgressRouter from '@/hooks/useProgressRouter'
 import banner from '../../../../public/images/banner.webp'
 
 const SearchSection = () => {
-  const router = useRouter()
-  const onSearch = (text: string) => {
-    if (text.length) {
-      router.push(`/search?title=${text}`)
-    }
-  }
+  const { onSearch } = useProgressRouter()
 
   return (
     <section className="flex flex-wrap max-h-[300px] relative text-white">

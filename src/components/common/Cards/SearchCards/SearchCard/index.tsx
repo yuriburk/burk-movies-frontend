@@ -23,6 +23,7 @@ const SearchCard = ({
         alt={title}
         width={135}
         height={170}
+        loading="lazy"
         className="rounded-tl-lg rounded-bl-lg"
       />
       <div className="p-3 w-full">

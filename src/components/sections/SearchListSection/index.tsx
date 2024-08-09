@@ -1,7 +1,7 @@
 'use client'
 import { Search, SearchCards } from '@/components/common'
+import useProgressRouter from '@/hooks/useProgressRouter'
 import useSearchTitle from '@/hooks/useSearchTitle'
-import { useRouter } from 'next/navigation'
 
 type SearchListSectionProps = {
   title: string
@@ -10,13 +10,7 @@ type SearchListSectionProps = {
 export const SearchListSection = ({ title }: SearchListSectionProps) => {
   const { data } = useSearchTitle({ title })
 
-  const router = useRouter()
-
-  const onSearch = (text: string) => {
-    if (text.length) {
-      router.push(`/search?title=${text}`)
-    }
-  }
+  const { onSearch } = useProgressRouter()
 
   return (
     <section className="flex flex-col gap-8">
