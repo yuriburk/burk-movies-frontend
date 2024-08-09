@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import { Source_Sans_3 } from 'next/font/google'
-import NextTopLoader from 'nextjs-toploader'
 import { Footer, Navigation } from '@/components/layout'
 import Providers from './providers'
 import './globals.css'
@@ -20,10 +19,9 @@ export default function RootLayout({
   return (
     <html lang="pt">
       <body className={source.className}>
-        <NextTopLoader />
         <Providers>
           <Navigation />
-          {children}
+          <div className="mt-16">{children}</div>
           <Footer />
         </Providers>
       </body>

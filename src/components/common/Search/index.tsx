@@ -3,11 +3,12 @@ import { useRef } from 'react'
 import { Button } from '@/components/common'
 
 type SearchProps = {
-  onSubmit: (text: string) => void
   placeholder?: string
+  buttonClassName?: string
+  onSubmit: (text: string) => void
 }
 
-const Search = ({ onSubmit, placeholder }: SearchProps) => {
+const Search = ({ placeholder, buttonClassName, onSubmit }: SearchProps) => {
   const inputRef = useRef<HTMLInputElement>(null)
 
   const handleSubmit = () => {
@@ -32,7 +33,7 @@ const Search = ({ onSubmit, placeholder }: SearchProps) => {
         placeholder={placeholder}
         onKeyUp={onPressKey}
       />
-      <Button className="text-base" onClick={handleSubmit}>
+      <Button className={buttonClassName} onClick={handleSubmit}>
         Pesquisar
       </Button>
     </div>

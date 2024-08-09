@@ -5,6 +5,7 @@ import {
   QueryClient,
   QueryClientProvider
 } from '@tanstack/react-query'
+import NextTopLoader from 'nextjs-toploader'
 
 function makeQueryClient() {
   return new QueryClient({
@@ -31,7 +32,10 @@ const Providers = ({ children }: React.PropsWithChildren) => {
   const queryClient = getQueryClient()
 
   return (
-    <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+    <QueryClientProvider client={queryClient}>
+      <NextTopLoader />
+      {children}
+    </QueryClientProvider>
   )
 }
 

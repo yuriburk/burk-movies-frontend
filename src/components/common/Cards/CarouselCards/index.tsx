@@ -1,11 +1,11 @@
-import Card, { CardProps } from './Card'
+import CarouselCard, { CarouselCardProps } from './CarouselCard'
 
-export type CardsProps = {
-  items: (CardProps & { id: number })[]
+export type CarouselCardsProps = {
+  items: (CarouselCardProps & { id: number })[]
   isLoading?: boolean
 }
 
-export const Cards = ({ items, isLoading }: CardsProps) => (
+export const CarouselCards = ({ items, isLoading }: CarouselCardsProps) => (
   <div className="flex overflow-x-scroll gap-3">
     {isLoading
       ? Array.from(Array(10).keys()).map((i) => (
@@ -15,7 +15,7 @@ export const Cards = ({ items, isLoading }: CardsProps) => (
           ></div>
         ))
       : items.map((item) => (
-          <Card
+          <CarouselCard
             key={item.id}
             title={item.title}
             image={item.image}
@@ -26,4 +26,4 @@ export const Cards = ({ items, isLoading }: CardsProps) => (
   </div>
 )
 
-export default Cards
+export default CarouselCards

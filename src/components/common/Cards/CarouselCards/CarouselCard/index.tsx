@@ -2,14 +2,19 @@ import Image from 'next/image'
 import { toLocaleDateString } from '@/utils/dates'
 import { PopularityBadge } from '@/components/common'
 
-export type CardProps = {
+export type CarouselCardProps = {
   title: string
   image: string
   popularity: number
   date: string
 }
 
-export const Card = ({ title, image, popularity, date }: CardProps) => (
+export const CarouselCard = ({
+  title,
+  image,
+  popularity,
+  date
+}: CarouselCardProps) => (
   <div className="flex flex-col gap-5">
     <div className="relative">
       <Image
@@ -31,4 +36,4 @@ export const Card = ({ title, image, popularity, date }: CardProps) => (
   </div>
 )
 
-export default Card
+export default CarouselCard

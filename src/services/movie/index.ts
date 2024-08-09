@@ -35,6 +35,17 @@ class MovieService {
 
     return result.json()
   }
+  static async searchTitle(title: string): Promise<Requests<Movie[]>> {
+    const result = await fetch(
+      `${process.env.NEXT_PUBLIC_API_LINK}search?title=${title}`
+    )
+
+    if (!result.ok) {
+      throw new Error('Failed to fetch data')
+    }
+
+    return result.json()
+  }
 }
 
 export default MovieService

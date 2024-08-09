@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { themeColors } from '../../../../tailwind.config'
 
 type LogoProps = { id: string; width: number; height: number }
 
@@ -12,8 +13,8 @@ const Logo = ({ id, width, height }: LogoProps) => (
     >
       <defs>
         <linearGradient id={id} x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop stopColor="#1ed5a9" offset="0%"></stop>
-          <stop stopColor="#01b4e4" offset="100%"></stop>
+          <stop stopColor={themeColors['primary-color']} offset="0%"></stop>
+          <stop stopColor={themeColors['secondary-color']} offset="100%"></stop>
         </linearGradient>
       </defs>
       <g fill={`url(#${id})`}>

@@ -1,11 +1,13 @@
 'use client'
 import Selector, { SelectorProps } from '@/components/common/Selector'
-import Cards, { CardsProps } from '@/components/common/Cards'
+import CarouselCards, {
+  CarouselCardsProps
+} from '@/components/common/Cards/CarouselCards'
 
 type CarouselProps = {
   title: string
   selectorProps?: SelectorProps
-  cardsProps: CardsProps
+  cardsProps: CarouselCardsProps
 }
 
 const Carousel = ({
@@ -24,7 +26,7 @@ const Carousel = ({
         />
       )}
     </div>
-    <Cards items={items} isLoading={isLoading} />
+    <CarouselCards items={items} isLoading={isLoading} />
   </div>
 )
 

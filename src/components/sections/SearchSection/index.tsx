@@ -1,10 +1,16 @@
 'use client'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
+import { Search } from '@/components/common'
 import banner from '../../../../public/images/banner.webp'
-import { Search } from '../../common'
 
 const SearchSection = () => {
-  const onSearch = () => {}
+  const router = useRouter()
+  const onSearch = (text: string) => {
+    if (text.length) {
+      router.push(`/search?title=${text}`)
+    }
+  }
 
   return (
     <section className="flex flex-wrap max-h-[300px] relative text-white">

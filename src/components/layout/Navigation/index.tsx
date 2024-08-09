@@ -13,8 +13,8 @@ export const navigationLinks: NavigationLink[] = [
 const Navigation = () => {
   return (
     <header>
-      <div className="bg-primary-background text-white font-medium">
-        <div className="hidden md:flex justify-between items-center h-16 px-10 max-container">
+      <div className="bg-primary-background text-white font-medium fixed w-full z-10 top-0">
+        <div className="hidden md:flex justify-between items-center h-16 px-10">
           <div className="flex items-center gap-8">
             <Logo id="logo-navigation-desktop" width={35} height={35} />
             <ul className="flex gap-8">
