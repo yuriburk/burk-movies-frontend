@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Source_Sans_3 } from 'next/font/google'
 import NextTopLoader from 'nextjs-toploader'
-import { Navigation } from '@/components/layout'
+import { Footer, Navigation } from '@/components/layout'
 import Providers from './providers'
 import './globals.css'
 
@@ -24,6 +24,7 @@ export default function RootLayout({
         <Providers>
           <Navigation />
           {children}
+          <Footer />
         </Providers>
       </body>
     </html>

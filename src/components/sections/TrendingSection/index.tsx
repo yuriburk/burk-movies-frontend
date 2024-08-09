@@ -9,7 +9,7 @@ const trendingOptions = Object.keys(TrendingEnum)
 const TrendingSection = () => {
   const [selectedOption, setSelectedOption] = useState<TrendingOption>('Hoje')
 
-  const { data, isLoading } = useTrending({
+  const { data, isFetching } = useTrending({
     option: TrendingEnum[selectedOption]
   })
 
@@ -24,7 +24,7 @@ const TrendingSection = () => {
             setSelectedOption(option as TrendingOption)
           }
         }}
-        cardsProps={{ items: data?.results ?? [], isLoading }}
+        cardsProps={{ items: data?.results ?? [], isLoading: isFetching }}
       />
     </section>
   )

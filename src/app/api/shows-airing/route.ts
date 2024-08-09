@@ -1,11 +1,8 @@
 import { mapMovies } from '@/utils/mapper'
 
-export async function GET(request: Request) {
-  const { searchParams } = new URL(request.url)
-  const time = searchParams.get('time')
-
+export async function GET() {
   const result = await fetch(
-    `${process.env.MOVIE_API_LINK}/trending/all/${time}?include_adult=false&language=pt-BR`,
+    `${process.env.MOVIE_API_LINK}/discover/tv?include_adult=false&language=pt-BR&page=1&sort_by=popularity.desc`,
     {
       method: 'GET',
       headers: {

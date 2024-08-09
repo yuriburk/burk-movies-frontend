@@ -11,8 +11,6 @@ export async function prefetchTrending() {
   })
 
   return {
-    props: {
-      dehydratedTrendingState: dehydrate(queryClient)
-    }
+    dehydratedTrendingState: dehydrate(queryClient)
   }
 }

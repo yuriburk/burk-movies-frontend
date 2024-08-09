@@ -14,7 +14,7 @@ const useTrending = ({ option }: UseTrendingProps) => {
   })
 
   return {
-    isLoading: isFetching,
+    isFetching,
     data,
     error
   }

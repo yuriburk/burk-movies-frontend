@@ -17,6 +17,7 @@ export const Card = ({ title, image, popularity, date }: CardProps) => (
         alt={title}
         width={150}
         height={225}
+        loading="lazy"
         className="rounded-lg min-w-[150px] h-[225px]"
       />
       <div className="absolute -mt-5 ml-3">
