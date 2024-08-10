@@ -2,13 +2,13 @@ import { Carousel } from '@/components/common'
 import { Movie } from '@/domain/Movie'
 
 type ShowAiringSectionProps = {
-  shows: Movie[]
+  movies: Movie[]
 }
 
-const ShowsAiringSection = ({ shows }: ShowAiringSectionProps) => {
+const ShowsAiringSection = ({ movies }: ShowAiringSectionProps) => {
   return (
     <section id="shows-airing">
-      <Carousel title="Séries No Ar" cardsProps={{ items: shows }} />
+      <Carousel title="Séries No Ar" cardsProps={{ items: movies }} />
     </section>
   )
 }

@@ -33,7 +33,7 @@ const Search = ({ placeholder, buttonClassName, onSubmit }: SearchProps) => {
         placeholder={placeholder}
         onKeyUp={onPressKey}
       />
-      <Button className={buttonClassName} onClick={handleSubmit}>
+      <Button className={buttonClassName} onClick={handleSubmit} type="button">
         Pesquisar
       </Button>
     </div>

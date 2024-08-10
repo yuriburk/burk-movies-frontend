@@ -1,17 +1,17 @@
 'use client'
 import { Search, SearchCards } from '@/components/common'
-import { Movie } from '@/domain/Movie'
+import { Movie } from '@/domain'
 import useProgressRouter from '@/hooks/useProgressRouter'
 
-type SearchListSectionProps = {
+type SearchPageProps = {
   movies: Movie[]
 }
 
-export const SearchListSection = ({ movies }: SearchListSectionProps) => {
+const SearchPage = ({ movies }: SearchPageProps) => {
   const { onSearch } = useProgressRouter()
 
   return (
-    <section className="flex flex-col gap-8">
+    <main className="flex flex-col max-container">
       <div className="border-b border-b-slate-300 bg-white fixed w-full z-10 left-0">
         <Search
           placeholder="Pesquisar outros filmes e séries..."
@@ -28,6 +28,8 @@ export const SearchListSection = ({ movies }: SearchListSectionProps) => {
           </div>
         )}
       </div>
-    </section>
+    </main>
   )
 }
+
+export default SearchPage

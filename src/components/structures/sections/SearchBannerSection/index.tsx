@@ -1,12 +1,13 @@
 'use client'
 import Image from 'next/image'
 import { Search } from '@/components/common'
-import useProgressRouter from '@/hooks/useProgressRouter'
-import banner from '../../../../public/images/banner.webp'
+import banner from '../../../../../public/images/banner.webp'
 
-const SearchSection = () => {
-  const { onSearch } = useProgressRouter()
+type SearchBannerSection = {
+  onSearch: (text: string) => void
+}
 
+const SearchBannerSection = ({ onSearch }: SearchBannerSection) => {
   return (
     <section className="flex flex-wrap max-h-[300px] relative text-white">
       <Image
@@ -30,4 +31,4 @@ const SearchSection = () => {
   )
 }
 
-export default SearchSection
+export default SearchBannerSection

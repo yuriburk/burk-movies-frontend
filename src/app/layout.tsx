@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Source_Sans_3 } from 'next/font/google'
 import NextTopLoader from 'nextjs-toploader'
-import { Footer, Navigation } from '@/components/layout'
+import { Footer, Navigation } from '@/components/structures/layout'
 import './globals.css'
 
 const source = Source_Sans_3({ subsets: ['latin'] })

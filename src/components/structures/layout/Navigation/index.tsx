@@ -1,14 +1,8 @@
 import Link from 'next/link'
 import { Logo } from '@/components/common'
-import { NavigationLink } from '@/types'
 import NavigationIcon from './NavigationIcon'
 import { NavigationUser } from './NavigationUser'
-
-export const navigationLinks: NavigationLink[] = [
-  { title: 'Filmes', link: '/movie' },
-  { title: 'Séries', link: '/tv' },
-  { title: 'Pessoas', link: '/person' }
-]
+import NavigationLinks from './NavigationLinks'
 
 const Navigation = () => {
   return (
@@ -17,13 +11,7 @@ const Navigation = () => {
         <div className="hidden md:flex justify-between items-center h-16 px-10">
           <div className="flex items-center gap-8">
             <Logo id="logo-navigation-desktop" width={35} height={35} />
-            <ul className="flex gap-8">
-              {navigationLinks.map((navigationLink) => (
-                <li key={navigationLink.title}>
-                  <Link href={navigationLink.link}>{navigationLink.title}</Link>
-                </li>
-              ))}
-            </ul>
+            <NavigationLinks className="flex gap-8" />
           </div>
           <div className="flex items-center gap-8">
             <p className="border border-white px-1 py-0.5 rounded">PT</p>
@@ -31,9 +19,9 @@ const Navigation = () => {
           </div>
         </div>
         <div className="flex md:hidden justify-between items-center h-16 px-5">
-          <div className="fill-white">
+          <button type="button" className="fill-white">
             <NavigationIcon />
-          </div>
+          </button>
           <Logo id="logo-navigation-mobile" width={25} height={25} />
           <NavigationUser />
         </div>

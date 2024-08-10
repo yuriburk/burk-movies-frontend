@@ -1,4 +1,4 @@
-import { SearchListSection } from '@/components/sections'
+import { SearchPage } from '@/components/pages'
 import MovieService from '@/services/movie'
 
 export default async function Page({
@@ -9,9 +9,5 @@ export default async function Page({
   const title = searchParams.title
   const movies = await MovieService.searchTitle(title)
 
-  return (
-    <main className="flex flex-col max-container">
-      <SearchListSection movies={movies.results} />
-    </main>
-  )
+  return <SearchPage movies={movies.results} />
 }
