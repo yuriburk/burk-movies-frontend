@@ -9,13 +9,16 @@ export const navigationLinks: NavigationLink[] = [
 
 type NavigationLinksProps = {
   className?: string
+  onClick?: () => void
 }
 
-const NavigationLinks = ({ className }: NavigationLinksProps) => (
+const NavigationLinks = ({ className, onClick }: NavigationLinksProps) => (
   <ul className={className}>
     {navigationLinks.map((navigationLink) => (
       <li key={navigationLink.title}>
-        <Link href={navigationLink.link}>{navigationLink.title}</Link>
+        <Link href={navigationLink.link} onClick={onClick}>
+          {navigationLink.title}
+        </Link>
       </li>
     ))}
   </ul>

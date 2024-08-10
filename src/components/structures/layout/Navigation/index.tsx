@@ -27,7 +27,7 @@ const Navigation = () => {
           <button
             type="button"
             className="fill-white"
-            onClick={() => setMobileOpen(!mobileOpen)}
+            onClick={() => setMobileOpen(mobileOpen ? false : true)}
           >
             <NavigationIcon />
           </button>
@@ -39,14 +39,15 @@ const Navigation = () => {
         {mobileOpen && (
           <motion.div
             key="mobile-menu"
-            className="fixed top-0 flex md:hidden items-center justify-center h-screen w-screen text-white font-semibold bg-primary-background z-10"
+            className="flex items-center justify-center fixed top-0 md:hidden h-screen w-screen text-white font-semibold bg-primary-background z-20"
             initial={{ translateX: -500 }}
             animate={{ translateX: 0 }}
             exit={{ translateX: -800 }}
           >
-            <button onClick={() => setMobileOpen(false)}>
-              <NavigationLinks className="flex flex-col gap-32" />
-            </button>
+            <NavigationLinks
+              className="flex flex-col gap-32"
+              onClick={() => setMobileOpen(false)}
+            />
           </motion.div>
         )}
       </AnimatePresence>
