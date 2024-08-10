@@ -5,6 +5,7 @@ import Selector from './Selector'
 import Carousel from './Carousel'
 import PopularityBadge from './Badges/PopularityBadge'
 import { CarouselCards, SearchCards } from './Cards'
+import FormattedDate from './FormattedDate'
 
 export {
   Search,
@@ -14,5 +15,6 @@ export {
   Carousel,
   PopularityBadge,
   CarouselCards,
-  SearchCards
+  SearchCards,
+  FormattedDate
 }

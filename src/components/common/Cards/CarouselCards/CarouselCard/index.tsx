@@ -1,6 +1,5 @@
 import Image from 'next/image'
-import { toLocaleDateString } from '@/utils/dates'
-import { PopularityBadge } from '@/components/common'
+import { FormattedDate, PopularityBadge } from '@/components/common'
 
 export type CarouselCardProps = {
   title: string
@@ -14,26 +13,28 @@ export const CarouselCard = ({
   image,
   popularity,
   date
-}: CarouselCardProps) => (
-  <div className="flex flex-col gap-5">
-    <div className="relative">
-      <Image
-        src={image}
-        alt={title}
-        width={150}
-        height={225}
-        loading="lazy"
-        className="rounded-lg min-w-[150px] h-[225px]"
-      />
-      <div className="absolute -mt-5 ml-3">
-        <PopularityBadge popularity={popularity} />
+}: CarouselCardProps) => {
+  return (
+    <div className="flex flex-col gap-5">
+      <div className="relative">
+        <Image
+          src={image}
+          alt={title}
+          width={150}
+          height={225}
+          loading="lazy"
+          className="rounded-lg min-w-[150px] h-[225px]"
+        />
+        <div className="absolute -mt-5 ml-3">
+          <PopularityBadge popularity={popularity} />
+        </div>
+      </div>
+      <div>
+        <h2 className="font-semibold leading-none">{title}</h2>
+        <FormattedDate date={date} />
       </div>
     </div>
-    <div>
-      <h2 className="font-semibold leading-none">{title}</h2>
-      <p className="text-slate-500">{toLocaleDateString(date)}</p>
-    </div>
-  </div>
-)
+  )
+}
 
 export default CarouselCard

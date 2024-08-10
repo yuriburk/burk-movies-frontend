@@ -1,4 +1,4 @@
-import { toLocaleDateString } from '@/utils/dates'
+import FormattedDate from '@/components/common/FormattedDate'
 import Image from 'next/image'
 
 export type SearchCardProps = {
@@ -33,7 +33,7 @@ const SearchCard = ({
             ({originalTitle})
           </span>
         </h3>
-        <p className="text-slate-500">{toLocaleDateString(date)}</p>
+        <FormattedDate date={date} />
         <p className="mt-5 overflow-ellipsis overflow-hidden line-clamp-3">
           {description}
         </p>
