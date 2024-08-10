@@ -1,6 +1,8 @@
 import { Movie } from '@/domain/Movie'
+import { toLocaleDateString } from './dates'
+import { MovieResponse, ShowResponse } from '@/types/api'
 
-export const mapMovies = (movies: Record<string, unknown>[]) =>
+export const mapMovies = (movies: (MovieResponse & ShowResponse)[]) =>
   movies
     .filter((movie) => movie.poster_path)
     .map(
@@ -11,7 +13,7 @@ export const mapMovies = (movies: Record<string, unknown>[]) =>
           originalTitle: movie.original_title ?? movie.original_name,
           description: movie.overview,
           image: `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
-          date: movie.release_date ?? movie.first_air_date,
+          date: toLocaleDateString(movie.release_date ?? movie.first_air_date),
           popularity: movie.vote_average
         }) as Movie
     )

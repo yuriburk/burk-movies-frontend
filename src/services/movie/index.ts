@@ -1,8 +1,8 @@
 import { Movie } from '@/domain/Movie'
-import { Requests } from '@/types'
+import { Response } from '@/types/api'
 
 class MovieService {
-  static async getTrending(trendingOption: string): Promise<Requests<Movie[]>> {
+  static async getTrending(trendingOption: string): Promise<Response<Movie[]>> {
     const result = await fetch(
       `${process.env.NEXT_PUBLIC_API_LINK}trending?time=${trendingOption}`
     )
@@ -13,7 +13,7 @@ class MovieService {
 
     return result.json()
   }
-  static async getShowsAiring(): Promise<Requests<Movie[]>> {
+  static async getShowsAiring(): Promise<Response<Movie[]>> {
     const result = await fetch(
       `${process.env.NEXT_PUBLIC_API_LINK}shows-airing`
     )
@@ -24,7 +24,7 @@ class MovieService {
 
     return result.json()
   }
-  static async getCinema(): Promise<Requests<Movie[]>> {
+  static async getCinema(): Promise<Response<Movie[]>> {
     const result = await fetch(`${process.env.NEXT_PUBLIC_API_LINK}cinema`)
 
     if (!result.ok) {
@@ -33,7 +33,7 @@ class MovieService {
 
     return result.json()
   }
-  static async searchTitle(title: string): Promise<Requests<Movie[]>> {
+  static async searchTitle(title: string): Promise<Response<Movie[]>> {
     const result = await fetch(
       `${process.env.NEXT_PUBLIC_API_LINK}search?title=${title}`
     )
