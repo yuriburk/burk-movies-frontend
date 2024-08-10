@@ -1,30 +1,27 @@
 'use client'
-import { useState } from 'react'
 import { Carousel } from '@/components/common'
-import { TrendingEnum, TrendingOption } from '@/types'
-import useTrending from '@/hooks/useTrending'
+import useProgressRouter from '@/hooks/useProgressRouter'
+import { Movie, Trending, TrendingEnum, TrendingOption } from '@/domain'
 
-const trendingOptions = Object.keys(TrendingEnum)
+type TrendingSectionProps = {
+  movies: Movie[]
+  selectedOption: TrendingEnum
+}
 
-const TrendingSection = () => {
-  const [selectedOption, setSelectedOption] = useState<TrendingOption>('Hoje')
-
-  const { data, isFetching } = useTrending({
-    option: TrendingEnum[selectedOption]
-  })
+const TrendingSection = ({ movies, selectedOption }: TrendingSectionProps) => {
+  const { onSelectTrending } = useProgressRouter()
 
   return (
     <section id="trending">
       <Carousel
         title="Tendências"
         selectorProps={{
-          options: trendingOptions,
-          selectedOption,
-          onSelect: (option: string) => {
-            setSelectedOption(option as TrendingOption)
-          }
+          options: Trending.options,
+          selectedOption: Trending.getOptionLabel(selectedOption),
+          onSelect: (option: string) =>
+            onSelectTrending(TrendingEnum[option as TrendingOption])
         }}
-        cardsProps={{ items: data?.results ?? [], isLoading: isFetching }}
+        cardsProps={{ items: movies }}
       />
     </section>
   )

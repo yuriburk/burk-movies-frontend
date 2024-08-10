@@ -1,6 +1,5 @@
-import { HydrationBoundary } from '@tanstack/react-query'
 import { SearchListSection } from '@/components/sections'
-import { prefetchSearch } from '@/hooks/useSearchTitle/prefetch'
+import MovieService from '@/services/movie'
 
 export default async function Page({
   searchParams
@@ -8,13 +7,11 @@ export default async function Page({
   searchParams: Record<string, string>
 }) {
   const title = searchParams.title
-  const { dehydratedSearchState } = await prefetchSearch(title)
+  const movies = await MovieService.searchTitle(title)
 
   return (
     <main className="flex flex-col max-container">
-      <HydrationBoundary state={dehydratedSearchState}>
-        <SearchListSection title={title} />
-      </HydrationBoundary>
+      <SearchListSection movies={movies.results} />
     </main>
   )
 }

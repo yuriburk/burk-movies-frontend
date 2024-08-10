@@ -1,10 +1,8 @@
 import { Movie } from '@/domain/Movie'
-import { Requests, TrendingEnum } from '@/types'
+import { Requests } from '@/types'
 
 class MovieService {
-  static async getTrending(
-    trendingOption: TrendingEnum
-  ): Promise<Requests<Movie[]>> {
+  static async getTrending(trendingOption: string): Promise<Requests<Movie[]>> {
     const result = await fetch(
       `${process.env.NEXT_PUBLIC_API_LINK}trending?time=${trendingOption}`
     )

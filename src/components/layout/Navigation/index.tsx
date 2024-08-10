@@ -28,7 +28,6 @@ const Navigation = () => {
           <div className="flex items-center gap-8">
             <p className="border border-white px-1 py-0.5 rounded">PT</p>
             <Link href="/">Entrar</Link>
-            <Link href="/">Junte-se ao TMDB</Link>
           </div>
         </div>
         <div className="flex md:hidden justify-between items-center h-16 px-5">

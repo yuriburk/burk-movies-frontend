@@ -1,15 +1,13 @@
 'use client'
 import { Search, SearchCards } from '@/components/common'
+import { Movie } from '@/domain/Movie'
 import useProgressRouter from '@/hooks/useProgressRouter'
-import useSearchTitle from '@/hooks/useSearchTitle'
 
 type SearchListSectionProps = {
-  title: string
+  movies: Movie[]
 }
 
-export const SearchListSection = ({ title }: SearchListSectionProps) => {
-  const { data } = useSearchTitle({ title })
-
+export const SearchListSection = ({ movies }: SearchListSectionProps) => {
   const { onSearch } = useProgressRouter()
 
   return (
@@ -22,8 +20,8 @@ export const SearchListSection = ({ title }: SearchListSectionProps) => {
         />
       </div>
       <div className="flex w-full p-8 mt-8">
-        {data?.results?.length ? (
-          <SearchCards items={data?.results} />
+        {movies?.length ? (
+          <SearchCards items={movies} />
         ) : (
           <div className="flex justify-center items-center w-full min-h-[350px]">
             <p>Ops, parece que tem nada com esse nome.</p>

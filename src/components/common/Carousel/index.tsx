@@ -13,7 +13,7 @@ type CarouselProps = {
 const Carousel = ({
   title,
   selectorProps,
-  cardsProps: { items, isLoading }
+  cardsProps: { items }
 }: CarouselProps) => (
   <div className="flex flex-col justify-center gap-5 p-8">
     <div className="flex flex-wrap items-center gap-5">
@@ -26,7 +26,7 @@ const Carousel = ({
         />
       )}
     </div>
-    <CarouselCards items={items} isLoading={isLoading} />
+    <CarouselCards items={items} />
   </div>
 )
 

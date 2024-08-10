@@ -1,16 +1,14 @@
-'use client'
 import { Carousel } from '@/components/common'
-import useShowsAiring from '@/hooks/useShowsAiring'
+import { Movie } from '@/domain/Movie'
 
-const ShowsAiringSection = () => {
-  const { data, isFetching } = useShowsAiring()
+type ShowAiringSectionProps = {
+  shows: Movie[]
+}
 
+const ShowsAiringSection = ({ shows }: ShowAiringSectionProps) => {
   return (
     <section id="shows-airing">
-      <Carousel
-        title="Séries No Ar"
-        cardsProps={{ items: data?.results ?? [], isLoading: isFetching }}
-      />
+      <Carousel title="Séries No Ar" cardsProps={{ items: shows }} />
     </section>
   )
 }
