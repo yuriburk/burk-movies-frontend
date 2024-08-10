@@ -1,8 +1,7 @@
 import Logo from '.'
-
 describe('<Logo />', () => {
   it('should be able to render', () => {
-    cy.mount(<Logo id="logo" width={90} height={90} />)
+    cy.mountWithAppRouterContext(<Logo id="logo" width={90} height={90} />)
 
     cy.get('h1').should('exist').and('have.text', 'Burk Movies')
 

@@ -5,6 +5,7 @@ declare global {
     interface Chainable {
       mount: typeof mount
       desktopViewport(): Chainable
+      mountWithAppRouterContext(children): Chainable
     }
   }
 }

@@ -18,7 +18,12 @@ const useProgressRouter = () => {
     }
   }
 
-  return { onSelectTrending, onSearch }
+  const onLogoClick = () => {
+    NProgress.start()
+    router.push('/')
+  }
+
+  return { onSelectTrending, onSearch, onLogoClick }
 }
 
 export default useProgressRouter

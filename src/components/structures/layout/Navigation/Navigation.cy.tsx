@@ -3,7 +3,7 @@ import Navigation from '.'
 
 describe('<Navigation />', () => {
   it('should be able to render the desktop menu navigation', () => {
-    cy.desktopViewport().mount(<Navigation />)
+    cy.desktopViewport().mountWithAppRouterContext(<Navigation />)
 
     navigationLinks.forEach((navigationLink) => {
       cy.get(`a[href="${navigationLink.link}"`).should('exist')

@@ -1,29 +1,12 @@
+import { AppRouterContextProviderMock } from '../mocks/app-router-context-provider-mock'
+
 /* eslint-disable no-undef */
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 Cypress.Commands.add('desktopViewport', () => {
   return cy.viewport(1080, 720)
+})
+
+Cypress.Commands.add('mountWithAppRouterContext', (children) => {
+  return cy.mount(
+    <AppRouterContextProviderMock>{children}</AppRouterContextProviderMock>
+  )
 })
