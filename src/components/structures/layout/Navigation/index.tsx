@@ -2,8 +2,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { AnimatePresence, motion } from 'framer-motion'
-import { Logo } from '@/components/common'
-import NavigationIcon from './NavigationIcon'
+import { Logo, NavigationIcon } from '@/components/common'
 import { NavigationUser } from './NavigationUser'
 import NavigationLinks from './NavigationLinks'
 

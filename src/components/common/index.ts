@@ -1,16 +1,8 @@
-import Search from './Search'
-import Button from './Button'
-import Logo from './Logo'
-import Selector from './Selector'
-import PopularityBadge from './Badges/PopularityBadge'
-import { FormattedDate, FormattedMinutes } from './Texts'
-
-export {
-  Search,
-  Button,
-  Logo,
-  Selector,
-  PopularityBadge,
-  FormattedDate,
-  FormattedMinutes
-}
+export { default as Search } from './Search'
+export { default as Button } from './Button'
+export { default as RoundButton } from './Button/RoundButton'
+export { default as Logo } from './Logo'
+export { default as Selector } from './Selector'
+export { default as PopularityBadge } from './Badges/PopularityBadge'
+export * from './Texts'
+export * from './Icons'

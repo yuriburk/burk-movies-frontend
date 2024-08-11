@@ -1,7 +1,8 @@
 import Image from 'next/image'
 import {
   MovieDetailsPopularity,
-  MovieDetailsTitle
+  MovieDetailsTitle,
+  MovieDetailsButtons
 } from '@/components/structures'
 
 type MovieBannerDetailsProps = {
@@ -57,6 +58,7 @@ const MovieBannerDetails = ({
           popularity={popularity}
           backdropColor={backdropColor}
         />
+        <MovieDetailsButtons />
       </div>
     </div>
   </section>

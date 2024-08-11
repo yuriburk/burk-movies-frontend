@@ -1,4 +1,4 @@
-import * as Vibrant from 'node-vibrant'
+import Vibrant from 'node-vibrant'
 import { MoviePage } from '@/components/pages'
 import { MovieService } from '@/services'
 
