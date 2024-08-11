@@ -1,21 +1,26 @@
 import Image from 'next/image'
 import { FormattedDate, PopularityBadge } from '@/components/common'
 
-export type CarouselCardProps = {
+export type CarouselCardItem = {
   title: string
   image: string
   popularity: number
   date: string
 }
 
+export type CarouselCardProps = CarouselCardItem & {
+  onClick: () => void
+}
+
 export const CarouselCard = ({
   title,
   image,
   popularity,
-  date
+  date,
+  onClick
 }: CarouselCardProps) => {
   return (
-    <div className="flex flex-col gap-5">
+    <button className="flex flex-col gap-5" onClick={onClick}>
       <div className="relative">
         <Image
           src={image}
@@ -29,11 +34,11 @@ export const CarouselCard = ({
           <PopularityBadge popularity={popularity} />
         </div>
       </div>
-      <div>
+      <div className="text-start">
         <h2 className="font-semibold leading-none">{title}</h2>
-        <FormattedDate date={date} />
+        <FormattedDate date={date} className="text-slate-500" />
       </div>
-    </div>
+    </button>
   )
 }
 

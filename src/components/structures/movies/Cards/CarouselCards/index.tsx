@@ -1,10 +1,13 @@
-import CarouselCard, { CarouselCardProps } from './CarouselCard'
+import CarouselCard, { CarouselCardItem } from './CarouselCard'
+
+type Item = { id: number; mediaType: string } & CarouselCardItem
 
 export type CarouselCardsProps = {
-  items: (CarouselCardProps & { id: number })[]
+  items: Item[]
+  onClick: (item: Item) => void
 }
 
-export const CarouselCards = ({ items }: CarouselCardsProps) => (
+export const CarouselCards = ({ items, onClick }: CarouselCardsProps) => (
   <div className="flex overflow-x-scroll gap-3">
     {items.map((item) => (
       <CarouselCard
@@ -13,6 +16,7 @@ export const CarouselCards = ({ items }: CarouselCardsProps) => (
         image={item.image}
         popularity={item.popularity}
         date={item.date}
+        onClick={() => onClick(item)}
       />
     ))}
   </div>

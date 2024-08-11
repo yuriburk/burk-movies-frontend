@@ -7,7 +7,7 @@ export type TrendingOption = keyof typeof TrendingEnum
 
 export class Trending {
   static options = Object.keys(TrendingEnum)
-  static getOption = (option: string): TrendingEnum =>
+  static getOption = (option?: string): TrendingEnum =>
     Object.values(TrendingEnum)?.includes(option as TrendingEnum)
       ? (option as TrendingEnum)
       : TrendingEnum.Hoje

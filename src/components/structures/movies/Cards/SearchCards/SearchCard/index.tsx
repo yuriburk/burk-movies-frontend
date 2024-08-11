@@ -1,4 +1,4 @@
-import FormattedDate from '@/components/common/FormattedDate'
+import { FormattedDate } from '@/components/common'
 import Image from 'next/image'
 
 export type SearchCardProps = {
@@ -33,7 +33,7 @@ const SearchCard = ({
             ({originalTitle})
           </span>
         </h3>
-        <FormattedDate date={date} />
+        <FormattedDate date={date} className="text-slate-500" />
         <p className="mt-5 overflow-ellipsis overflow-hidden line-clamp-3">
           {description}
         </p>

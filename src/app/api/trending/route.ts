@@ -5,7 +5,7 @@ export async function GET(request: Request) {
   const time = searchParams.get('time')
 
   const result = await fetch(
-    `${process.env.MOVIE_API_LINK}/trending/all/${time}?include_adult=false&language=pt-BR`,
+    `${process.env.MOVIE_API_LINK}trending/all/${time}?include_adult=false&language=pt-BR`,
     {
       method: 'GET',
       headers: {
@@ -14,7 +14,6 @@ export async function GET(request: Request) {
       }
     }
   )
-
   if (!result.ok) {
     throw new Error('Failed to fetch data')
   }

@@ -1,5 +1,6 @@
 'use client'
-import { Search, SearchCards } from '@/components/common'
+import { Search } from '@/components/common'
+import { SearchCards } from '@/components/structures'
 import { Movie } from '@/domain'
 import useProgressRouter from '@/hooks/useProgressRouter'
 

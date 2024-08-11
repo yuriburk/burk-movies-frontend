@@ -2,7 +2,7 @@
 import Selector, { SelectorProps } from '@/components/common/Selector'
 import CarouselCards, {
   CarouselCardsProps
-} from '@/components/common/Cards/CarouselCards'
+} from '@/components/structures/movies/Cards/CarouselCards'
 
 type CarouselProps = {
   title: string
@@ -10,11 +10,7 @@ type CarouselProps = {
   cardsProps: CarouselCardsProps
 }
 
-const Carousel = ({
-  title,
-  selectorProps,
-  cardsProps: { items }
-}: CarouselProps) => (
+const Carousel = ({ title, selectorProps, cardsProps }: CarouselProps) => (
   <div className="flex flex-col justify-center gap-5 p-8">
     <div className="flex flex-wrap items-center gap-5">
       <h2 className="font-medium text-2xl">{title}</h2>
@@ -26,7 +22,7 @@ const Carousel = ({
         />
       )}
     </div>
-    <CarouselCards items={items} />
+    <CarouselCards items={cardsProps.items} onClick={cardsProps.onClick} />
   </div>
 )
 

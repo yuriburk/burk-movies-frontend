@@ -4,14 +4,15 @@ import { toLocaleDateString } from '@/utils/dates'
 
 type FormattedDateProps = {
   date: string
+  className?: string
 }
 
-const FormattedDate = ({ date }: FormattedDateProps) => {
+const FormattedDate = ({ date, className }: FormattedDateProps) => {
   const [formattedDate, setFormattedDate] = useState<string>()
 
   useEffect(() => setFormattedDate(toLocaleDateString(date)), [date])
 
-  return <p className="text-slate-500">{formattedDate}</p>
+  return <p className={className}>{formattedDate}</p>
 }
 
 export default FormattedDate

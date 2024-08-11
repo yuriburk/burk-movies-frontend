@@ -2,7 +2,7 @@ import { mapMovies } from '@/utils/mapper'
 
 export async function GET() {
   const result = await fetch(
-    `${process.env.MOVIE_API_LINK}/discover/tv?include_adult=false&language=pt-BR&page=1&sort_by=popularity.desc`,
+    `${process.env.MOVIE_API_LINK}discover/tv?include_adult=false&language=pt-BR&page=1&sort_by=popularity.desc`,
     {
       method: 'GET',
       headers: {

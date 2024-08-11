@@ -1,13 +1,14 @@
 import { SearchPage } from '@/components/pages'
-import MovieService from '@/services/movie'
+import { SearchService } from '@/services'
 
 export default async function Page({
   searchParams
 }: {
-  searchParams: Record<string, string>
+  searchParams: { title?: string }
 }) {
-  const title = searchParams.title
-  const movies = await MovieService.searchTitle(title)
+  const movies = await SearchService.searchTitle(
+    searchParams.title ?? 'Super Mario'
+  )
 
   return <SearchPage movies={movies.results} />
 }
