@@ -6,7 +6,13 @@ import {
   CinemaSection,
   MovieBannerDetails
 } from './sections'
-import { Carousel, CarouselCards, SearchCards } from './movies'
+import {
+  Carousel,
+  CarouselCards,
+  SearchCards,
+  MovieDetailsTitle,
+  MovieDetailsPopularity
+} from './movies'
 
 export {
   Navigation,
@@ -18,5 +24,7 @@ export {
   MovieBannerDetails,
   Carousel,
   CarouselCards,
-  SearchCards
+  SearchCards,
+  MovieDetailsTitle,
+  MovieDetailsPopularity
 }

@@ -17,7 +17,7 @@ const CinemaSection = ({ movies }: CinemaSectionProps) => {
     >
       {movies?.length && (
         <Image
-          src={movies[0].image}
+          src={movies[0].backdrop}
           alt="Image"
           width={1300}
           height={300}
@@ -27,7 +27,7 @@ const CinemaSection = ({ movies }: CinemaSectionProps) => {
       <Carousel
         title="No Cinema"
         cardsProps={{
-          items: movies,
+          movies,
           onClick: (item) => onMovieClick(item.id, 'movie')
         }}
       />

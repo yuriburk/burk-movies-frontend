@@ -1,7 +1,6 @@
-declare module 'colorthief' {
+declare module 'colorthief/dist/color-thief-node' {
   type Color = [number, number, number]
-  export default class ColorThief {
-    getColor: (img: HTMLImageElement | string | null) => Color
-    getPalette: (img: HTMLImageElement | string | null) => Color[]
-  }
+
+  export function getColor(img: HTMLImageElement | string | null): Color
+  export function getPalette(img: HTMLImageElement | string | null): Color[]
 }

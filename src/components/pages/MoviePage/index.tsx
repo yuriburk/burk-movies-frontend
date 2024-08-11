@@ -3,9 +3,10 @@ import { Movie } from '@/domain'
 
 type MoviePageProps = {
   movie: Movie
+  backdropColor: string
 }
 
-const MoviePage = ({ movie }: MoviePageProps) => {
+const MoviePage = ({ movie, backdropColor }: MoviePageProps) => {
   return (
     <main>
       {movie?.details ? (
@@ -13,9 +14,11 @@ const MoviePage = ({ movie }: MoviePageProps) => {
           title={movie.title}
           image={movie.image}
           backdrop={movie.backdrop}
+          backdropColor={backdropColor}
           date={movie.date}
           genres={movie.details.genres}
           duration={movie.details.duration}
+          popularity={movie.popularity}
         />
       ) : (
         <div className="flex justify-center items-center w-full min-h-[350px]">

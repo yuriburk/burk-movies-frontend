@@ -8,7 +8,7 @@ export const mapMovie = (movie: MovieResponse & ShowResponse): Movie =>
     originalTitle: movie.original_title ?? movie.original_name,
     description: movie.overview,
     image: `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
-    backdrop: `https://image.tmdb.org/t/p/w500${movie.backdrop_path}`,
+    backdrop: `https://image.tmdb.org/t/p/w1920_and_h800_multi_faces${movie.backdrop_path}`,
     date: movie.release_date ?? movie.first_air_date,
     popularity: movie.vote_average,
     mediaType: movie.media_type

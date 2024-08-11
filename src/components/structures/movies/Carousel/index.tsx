@@ -22,7 +22,7 @@ const Carousel = ({ title, selectorProps, cardsProps }: CarouselProps) => (
         />
       )}
     </div>
-    <CarouselCards items={cardsProps.items} onClick={cardsProps.onClick} />
+    <CarouselCards movies={cardsProps.movies} onClick={cardsProps.onClick} />
   </div>
 )
 

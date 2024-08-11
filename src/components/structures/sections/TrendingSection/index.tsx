@@ -22,7 +22,7 @@ const TrendingSection = ({ movies, selectedOption }: TrendingSectionProps) => {
             onSelectTrending(TrendingEnum[option as TrendingOption])
         }}
         cardsProps={{
-          items: movies,
+          movies,
           onClick: (item) => onMovieClick(item.id, item.mediaType)
         }}
       />

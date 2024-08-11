@@ -14,7 +14,7 @@ const ShowsAiringSection = ({ movies }: ShowAiringSectionProps) => {
       <Carousel
         title="Séries No Ar"
         cardsProps={{
-          items: movies,
+          movies,
           onClick: (item) => onMovieClick(item.id, item.mediaType)
         }}
       />

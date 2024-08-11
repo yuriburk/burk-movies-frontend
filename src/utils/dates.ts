@@ -1,7 +1,7 @@
-export const toLocaleDateString = (date: string) =>
+export const toLocaleDateString = (date: string, format: 'numeric' | 'short') =>
   new Date(date).toLocaleDateString('pt-BR', {
     year: 'numeric',
-    month: 'short',
+    month: format,
     day: 'numeric'
   })
 

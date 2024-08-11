@@ -33,7 +33,7 @@ const SearchCard = ({
             ({originalTitle})
           </span>
         </h3>
-        <FormattedDate date={date} className="text-slate-500" />
+        <FormattedDate className="text-slate-500" date={date} format="short" />
         <p className="mt-5 overflow-ellipsis overflow-hidden line-clamp-3">
           {description}
         </p>
