@@ -24,7 +24,6 @@ export const mapMovieDetails = (
   details: {
     genres: movie.genres.map((genre) => genre.name),
     duration: movie.runtime,
-    paragraph: movie.tagline,
     actors: movie.credits.cast.map((actor) => ({
       id: actor.id,
       name: actor.name,

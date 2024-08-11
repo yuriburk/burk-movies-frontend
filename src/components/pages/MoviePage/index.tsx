@@ -19,6 +19,7 @@ const MoviePage = ({ movie, backdropColor }: MoviePageProps) => {
           genres={movie.details.genres}
           duration={movie.details.duration}
           popularity={movie.popularity}
+          description={movie.description}
         />
       ) : (
         <div className="flex justify-center items-center w-full min-h-[350px]">

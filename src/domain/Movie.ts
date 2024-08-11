@@ -3,7 +3,6 @@ export type Actor = { id: number; name: string; image: string; title: string }
 export type MovieDetail = {
   genres: string[]
   duration: number
-  paragraph: string
   actors: Actor[]
   situation: string
   releaseLanguage: string

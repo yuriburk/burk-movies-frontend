@@ -63,7 +63,6 @@ export type MovieDetailsResponse = {
   revenue: number
   runtime: number
   status: string
-  tagline: string
   title: string
   video: false
   vote_average: number
