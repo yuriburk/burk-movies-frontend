@@ -12,7 +12,6 @@
     "cypress:component": "cypress run --component"
   },
   "dependencies": {
-    "axios": "^1.7.3",
     "colorthief": "^2.4.0",
     "framer-motion": "^11.3.24",
     "next": "14.2.5",
