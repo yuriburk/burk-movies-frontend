@@ -1,4 +1,4 @@
-import { MovieService, ShowService, TrendingService } from '@/services'
+import { MovieService, SerieService, TrendingService } from '@/services'
 import { Trending, TrendingEnum } from '@/domain'
 import { HomePage } from '@/components/pages'
 
@@ -11,7 +11,7 @@ export default async function Home({
   const [trending, cinema, shows] = await Promise.all([
     TrendingService.getTrending(trendingOption as TrendingEnum),
     MovieService.getCinema(),
-    ShowService.getShowsAiring()
+    SerieService.getShowsAiring()
   ])
 
   return (

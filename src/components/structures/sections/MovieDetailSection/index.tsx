@@ -4,8 +4,9 @@ import {
   MovieDetailsTitle,
   MovieDetailsButtons
 } from '@/components/structures'
+import { toCurrency } from '@/utils/number'
 
-type MovieBannerDetailsProps = {
+type MovieDetailSectionProps = {
   title: string
   image: string
   backdrop: string
@@ -15,9 +16,12 @@ type MovieBannerDetailsProps = {
   duration: number
   popularity: number
   description: string
+  situation: string
+  revenue: number
+  budget: number
 }
 
-const MovieBannerDetails = ({
+const MovieDetailSection = ({
   title,
   image,
   backdrop,
@@ -26,8 +30,11 @@ const MovieBannerDetails = ({
   genres,
   duration,
   popularity,
-  description
-}: MovieBannerDetailsProps) => (
+  description,
+  situation,
+  revenue,
+  budget
+}: MovieDetailSectionProps) => (
   <section
     id="movie-details"
     className="relative"
@@ -65,9 +72,23 @@ const MovieBannerDetails = ({
           <h3 className="font-semibold text-xl">Sinopse</h3>
           <p className="font-light">{description}</p>
         </div>
+        <div className="flex gap-12">
+          <div>
+            <h3 className="font-semibold">Situação</h3>
+            <p>{situation}</p>
+          </div>
+          <div>
+            <h3 className="font-semibold">Receita</h3>
+            <p>{revenue > 0 && toCurrency(revenue)}</p>
+          </div>
+          <div>
+            <h3 className="font-semibold">Orçamento</h3>
+            <p>{budget > 0 && toCurrency(budget)}</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 )
 
-export default MovieBannerDetails
+export default MovieDetailSection

@@ -24,12 +24,14 @@ export const mapMovieDetails = (
   details: {
     genres: movie.genres.map((genre) => genre.name),
     duration: movie.runtime,
-    actors: movie.credits.cast.map((actor) => ({
-      id: actor.id,
-      name: actor.name,
-      image: `https://image.tmdb.org/t/p/w500${actor.profile_path}`,
-      title: actor.character
-    })),
+    actors: movie.credits.cast
+      .filter((actor) => actor.profile_path)
+      .map((actor) => ({
+        id: actor.id,
+        name: actor.name,
+        image: `https://image.tmdb.org/t/p/w500${actor.profile_path}`,
+        title: actor.character
+      })),
     situation: movie.status,
     releaseLanguage: movie.original_language,
     revenue: movie.revenue,

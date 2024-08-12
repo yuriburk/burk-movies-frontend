@@ -1,10 +1,10 @@
 import { Movie } from '@/domain'
 import { Response } from '@/types/api'
 
-class ShowService {
+class SerieService {
   static async getShowsAiring(): Promise<Response<Movie[]>> {
     const result = await fetch(
-      `${process.env.NEXT_PUBLIC_API_LINK}shows/airing`
+      `${process.env.NEXT_PUBLIC_API_LINK}serie/airing`
     )
 
     if (!result.ok) {
@@ -13,9 +13,9 @@ class ShowService {
 
     return result.json()
   }
-  static async getShowsDetails(id: number): Promise<Response<Movie[]>> {
+  static async getSerieDetails(id: number): Promise<Movie> {
     const result = await fetch(
-      `${process.env.NEXT_PUBLIC_API_LINK}shows/details/${id}`
+      `${process.env.NEXT_PUBLIC_API_LINK}serie/details/${id}`
     )
 
     if (!result.ok) {
@@ -26,4 +26,4 @@ class ShowService {
   }
 }
 
-export default ShowService
+export default SerieService
