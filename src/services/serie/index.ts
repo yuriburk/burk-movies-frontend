@@ -14,9 +14,7 @@ class SerieService {
     return result.json()
   }
   static async getSerieDetails(id: number): Promise<Movie> {
-    const result = await fetch(
-      `${process.env.NEXT_PUBLIC_API_LINK}serie/details/${id}`
-    )
+    const result = await fetch(`${process.env.NEXT_PUBLIC_API_LINK}serie/${id}`)
 
     if (!result.ok) {
       throw new Error('Failed to fetch data')

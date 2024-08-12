@@ -1,21 +1,23 @@
-import SearchCard, { SearchCardProps } from './SearchCard'
+import { Movie } from '@/domain'
+import SearchCard from './SearchCard'
 
 type SearchCardsProps = {
-  items: (SearchCardProps & { id: number })[]
-  isLoading?: boolean
+  movies: Movie[]
 }
 
-const SearchCards = ({ items }: SearchCardsProps) => {
+const SearchCards = ({ movies }: SearchCardsProps) => {
   return (
     <div className="flex flex-col gap-5">
-      {items.map((item) => (
+      {movies.map((movie) => (
         <SearchCard
-          key={item.id}
-          title={item.title}
-          originalTitle={item.originalTitle}
-          description={item.description}
-          image={item.image}
-          date={item.date}
+          key={movie.id}
+          id={movie.id}
+          title={movie.title}
+          originalTitle={movie.originalTitle}
+          description={movie.description}
+          image={movie.image}
+          date={movie.date}
+          mediaType={movie.mediaType}
         />
       ))}
     </div>

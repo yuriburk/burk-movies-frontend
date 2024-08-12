@@ -2,9 +2,10 @@ import Image from 'next/image'
 import {
   MovieDetailsPopularity,
   MovieDetailsTitle,
-  MovieDetailsButtons
+  MovieDetailsButtons,
+  MovieDetailsDescription,
+  MovieDetailsInformation
 } from '@/components/structures'
-import { toCurrency } from '@/utils/number'
 
 type MovieDetailSectionProps = {
   title: string
@@ -13,12 +14,13 @@ type MovieDetailSectionProps = {
   backdropColor: string
   date: string
   genres: string[]
-  duration: number
   popularity: number
   description: string
   situation: string
-  revenue: number
-  budget: number
+  revenue?: number
+  budget?: number
+  duration?: number
+  episodes?: number
 }
 
 const MovieDetailSection = ({
@@ -28,12 +30,13 @@ const MovieDetailSection = ({
   backdropColor,
   date,
   genres,
-  duration,
   popularity,
   description,
   situation,
   revenue,
-  budget
+  budget,
+  duration,
+  episodes
 }: MovieDetailSectionProps) => (
   <section
     id="movie-details"
@@ -62,30 +65,19 @@ const MovieDetailSection = ({
           date={date}
           genres={genres}
           duration={duration}
+          episodes={episodes}
         />
         <MovieDetailsPopularity
           popularity={popularity}
           backdropColor={backdropColor}
         />
         <MovieDetailsButtons />
-        <div className="flex flex-col gap-1">
-          <h3 className="font-semibold text-xl">Sinopse</h3>
-          <p className="font-light">{description}</p>
-        </div>
-        <div className="flex gap-12">
-          <div>
-            <h3 className="font-semibold">Situação</h3>
-            <p>{situation}</p>
-          </div>
-          <div>
-            <h3 className="font-semibold">Receita</h3>
-            <p>{revenue > 0 && toCurrency(revenue)}</p>
-          </div>
-          <div>
-            <h3 className="font-semibold">Orçamento</h3>
-            <p>{budget > 0 && toCurrency(budget)}</p>
-          </div>
-        </div>
+        <MovieDetailsDescription description={description} />
+        <MovieDetailsInformation
+          situation={situation}
+          revenue={revenue}
+          budget={budget}
+        />
       </div>
     </div>
   </section>

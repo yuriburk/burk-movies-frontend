@@ -4,14 +4,16 @@ type MovieDetailsTitleProps = {
   title: string
   date: string
   genres: string[]
-  duration: number
+  duration?: number
+  episodes?: number
 }
 
 export const MovieDetailsTitle = ({
   title,
   date,
   genres,
-  duration
+  duration,
+  episodes
 }: MovieDetailsTitleProps) => (
   <div>
     <h1 className="text-3xl font-bold">{title}</h1>
@@ -20,7 +22,8 @@ export const MovieDetailsTitle = ({
       <p>•</p>
       <p>{genres.join(', ')}</p>
       <p>•</p>
-      <FormattedMinutes minutes={duration} />
+      {duration && <FormattedMinutes minutes={duration} />}
+      {episodes && <p>{episodes} episódios</p>}
     </div>
   </div>
 )

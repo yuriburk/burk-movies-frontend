@@ -19,12 +19,13 @@ const MoviePage = ({ movie, backdropColor }: MoviePageProps) => {
             backdropColor={backdropColor}
             date={movie.date}
             genres={movie.details.genres}
-            duration={movie.details.duration}
             popularity={movie.popularity}
             description={movie.description}
             situation={movie.details.situation}
             revenue={movie.details.revenue}
             budget={movie.details.budget}
+            duration={movie.details.duration}
+            episodes={movie.details.episodes}
           />
           <MovieActorSection actors={movie.details.actors} />
         </div>

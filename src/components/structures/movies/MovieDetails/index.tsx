@@ -1,3 +1,5 @@
 export * from './MovieDetailsTitle'
 export * from './MovieDetailsPopularity'
 export * from './MovieDetailsButtons'
+export * from './MovieDetailsDescription'
+export * from './MovieDetailsInformation'

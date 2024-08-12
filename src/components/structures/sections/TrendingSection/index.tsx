@@ -9,7 +9,7 @@ type TrendingSectionProps = {
 }
 
 const TrendingSection = ({ movies, selectedOption }: TrendingSectionProps) => {
-  const { onSelectTrending, onMovieClick } = useProgressRouter()
+  const { onSelectTrending } = useProgressRouter()
 
   return (
     <section id="trending">
@@ -22,8 +22,7 @@ const TrendingSection = ({ movies, selectedOption }: TrendingSectionProps) => {
             onSelectTrending(TrendingEnum[option as TrendingOption])
         }}
         cardsProps={{
-          movies,
-          onClick: (item) => onMovieClick(item.id, item.mediaType)
+          movies
         }}
       />
     </section>

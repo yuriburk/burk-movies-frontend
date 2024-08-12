@@ -1,23 +1,31 @@
+import Link from 'next/link'
 import { FormattedDate } from '@/components/common'
 import Image from 'next/image'
 
 export type SearchCardProps = {
+  id: number
   title: string
   originalTitle: string
   description: string
   image: string
   date: string
+  mediaType: string
 }
 
 const SearchCard = ({
+  id,
   title,
   originalTitle,
   description,
   image,
-  date
+  date,
+  mediaType
 }: SearchCardProps) => {
   return (
-    <div className="flex items-start justify-between gap-5 w-full rounded-lg border border-gray-300 drop-shadow-lg">
+    <Link
+      className="flex items-start justify-between gap-5 w-full rounded-lg border border-gray-300 drop-shadow-lg"
+      href={`/${mediaType}/${id}`}
+    >
       <Image
         src={image}
         alt={title}
@@ -38,7 +46,7 @@ const SearchCard = ({
           {description}
         </p>
       </div>
-    </div>
+    </Link>
   )
 }
 

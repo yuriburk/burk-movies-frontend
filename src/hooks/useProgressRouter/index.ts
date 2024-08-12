@@ -23,14 +23,7 @@ const useProgressRouter = () => {
     router.push('/')
   }
 
-  const onMovieClick = (id: number, mediaType: string) => {
-    if (mediaType === 'movie') {
-      NProgress.start()
-      return router.push(`/movie/${id}`)
-    }
-  }
-
-  return { onSelectTrending, onSearch, onLogoClick, onMovieClick }
+  return { onSelectTrending, onSearch, onLogoClick }
 }
 
 export default useProgressRouter

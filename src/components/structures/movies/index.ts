@@ -3,7 +3,9 @@ import { CarouselCards, SearchCards } from './Cards'
 import {
   MovieDetailsTitle,
   MovieDetailsPopularity,
-  MovieDetailsButtons
+  MovieDetailsButtons,
+  MovieDetailsDescription,
+  MovieDetailsInformation
 } from './MovieDetails'
 
 export {
@@ -12,5 +14,7 @@ export {
   SearchCards,
   MovieDetailsTitle,
   MovieDetailsPopularity,
-  MovieDetailsButtons
+  MovieDetailsButtons,
+  MovieDetailsDescription,
+  MovieDetailsInformation
 }

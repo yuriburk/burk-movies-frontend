@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import { Movie } from '@/domain/Movie'
-import useProgressRouter from '@/hooks/useProgressRouter'
 import { Carousel } from '@/components/structures'
 
 type CinemaSectionProps = {
@@ -8,8 +7,6 @@ type CinemaSectionProps = {
 }
 
 const CinemaSection = ({ movies }: CinemaSectionProps) => {
-  const { onMovieClick } = useProgressRouter()
-
   return (
     <section
       id="cinema"
@@ -27,8 +24,7 @@ const CinemaSection = ({ movies }: CinemaSectionProps) => {
       <Carousel
         title="No Cinema"
         cardsProps={{
-          movies,
-          onClick: (item) => onMovieClick(item.id, 'movie')
+          movies
         }}
       />
     </section>

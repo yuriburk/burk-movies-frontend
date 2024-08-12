@@ -22,7 +22,7 @@ const SearchPage = ({ movies }: SearchPageProps) => {
       </div>
       <div className="flex w-full p-8 mt-8">
         {movies?.length ? (
-          <SearchCards items={movies} />
+          <SearchCards movies={movies} />
         ) : (
           <div className="flex justify-center items-center w-full min-h-[350px]">
             <p>Ops, parece que tem nada com esse nome.</p>

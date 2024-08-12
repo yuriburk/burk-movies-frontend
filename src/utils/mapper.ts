@@ -11,7 +11,7 @@ export const mapMovie = (movie: MovieResponse & ShowResponse): Movie =>
     backdrop: `https://image.tmdb.org/t/p/w1920_and_h800_multi_faces${movie.backdrop_path}`,
     date: movie.release_date ?? movie.first_air_date,
     popularity: movie.vote_average,
-    mediaType: movie.media_type
+    mediaType: movie.media_type === 'movie' ? movie.media_type : 'serie'
   }) as Movie
 
 export const mapMovies = (movies: (MovieResponse & ShowResponse)[]): Movie[] =>
@@ -24,6 +24,7 @@ export const mapMovieDetails = (
   details: {
     genres: movie.genres.map((genre) => genre.name),
     duration: movie.runtime,
+    episodes: movie.number_of_episodes,
     actors: movie.credits.cast
       .filter((actor) => actor.profile_path)
       .map((actor) => ({

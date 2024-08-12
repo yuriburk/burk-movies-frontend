@@ -27,6 +27,7 @@ export type ShowResponse = {
   adult: boolean
   original_language: string
   genre_ids: number[]
+  number_of_episodes: number
   popularity: number
   first_air_date: string
   vote_average: number

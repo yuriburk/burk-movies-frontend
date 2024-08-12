@@ -1,15 +1,15 @@
+import Link from 'next/link'
 import Image from 'next/image'
 import { FormattedDate, PopularityBadge } from '@/components/common'
 import { Movie } from '@/domain'
 
-export type CarouselCardProps = { movie: Movie; onClick: () => void }
+export type CarouselCardProps = { movie: Movie }
 
 export const CarouselCard = ({
-  movie: { title, image, popularity, date },
-  onClick
+  movie: { id, title, image, popularity, date, mediaType }
 }: CarouselCardProps) => {
   return (
-    <button className="flex flex-col gap-5" onClick={onClick}>
+    <Link className="flex flex-col gap-5" href={`/${mediaType}/${id}`}>
       <div className="relative">
         <Image
           src={image}
@@ -29,7 +29,7 @@ export const CarouselCard = ({
         <h2 className="font-semibold leading-none">{title}</h2>
         <FormattedDate className="text-slate-500" date={date} format="short" />
       </div>
-    </button>
+    </Link>
   )
 }
 

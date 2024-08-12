@@ -7,7 +7,7 @@ type ActorsCarouselProps = {
 
 const ActorsCarousel = ({ actors }: ActorsCarouselProps) => {
   return (
-    <div className="flex overflow-x-scroll gap-3">
+    <div className="flex items-center overflow-x-scroll overflow-y-hidden gap-3">
       {actors.map((actor) => (
         <ActorCard key={actor.id} actor={actor} />
       ))}

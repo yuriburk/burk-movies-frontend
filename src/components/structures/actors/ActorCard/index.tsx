@@ -7,7 +7,7 @@ type ActorCardProps = {
 
 const ActorCard = ({ actor }: ActorCardProps) => {
   return (
-    <div className="flex flex-col border border-slate-300 drop-shadow rounded-lg">
+    <div className="flex flex-col border border-slate-300 drop-shadow w-[138px] rounded-lg">
       <Image
         src={actor.image}
         alt={actor.name}
