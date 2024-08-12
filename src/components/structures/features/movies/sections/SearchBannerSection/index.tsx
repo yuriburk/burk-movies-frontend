@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 import { Search } from '@/components/common'
-import banner from '../../../../../public/images/banner.webp'
+import banner from '../../../../../../../public/images/banner.webp'
 
 type SearchBannerSection = {
   onSearch: (text: string) => void

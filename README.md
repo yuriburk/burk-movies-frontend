@@ -88,8 +88,9 @@ Your application will be available at http://localhost:3000.
 - **`pages/`**: Components specific to individual pages or views.
 - **`structures/`**: Components related to layout and feature-specific structures.
   - **`layouts/`**: Components defining the overall page layout.
-  - **`sections/`**: Components representing distinct sections of a page.
   - **`features/`**: Components tied to specific features or functionalities.
+    - **`common/`**: Components common for a specific feature.
+    - **`sections/`**: Components representing distinct sections of a feature.
 
 ## Running Tests
 

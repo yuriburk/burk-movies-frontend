@@ -1,5 +1,7 @@
-import { MovieDetailSection } from '@/components/structures/sections'
-import MovieActorSection from '@/components/structures/sections/MovieActorSection'
+import {
+  MovieDetailSection,
+  ActorsCarouselSection
+} from '@/components/structures'
 import { Movie } from '@/domain'
 
 type MoviePageProps = {
@@ -27,7 +29,7 @@ const MoviePage = ({ movie, backdropColor }: MoviePageProps) => {
             duration={movie.details.duration}
             episodes={movie.details.episodes}
           />
-          <MovieActorSection actors={movie.details.actors} />
+          <ActorsCarouselSection actors={movie.details.actors} />
         </div>
       ) : (
         <div className="flex justify-center items-center w-full min-h-[350px]">

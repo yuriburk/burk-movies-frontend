@@ -1,4 +1,3 @@
 export * from './layout'
-export * from './sections'
-export * from './movies'
-export * from './actors'
+export * from './features/movies'
+export * from './features/actors'

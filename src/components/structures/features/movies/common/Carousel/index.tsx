@@ -2,7 +2,7 @@
 import Selector, { SelectorProps } from '@/components/common/Selector'
 import CarouselCards, {
   CarouselCardsProps
-} from '@/components/structures/movies/Cards/CarouselCards'
+} from '@/components/structures/features/movies/common/Cards/CarouselCards'
 
 type CarouselProps = {
   title: string

@@ -4,7 +4,7 @@ import {
   TrendingSection,
   ShowsAiringSection,
   CinemaSection
-} from '@/components/structures/sections'
+} from '@/components/structures'
 import { Movie, TrendingEnum } from '@/domain'
 import useProgressRouter from '@/hooks/useProgressRouter'
 
