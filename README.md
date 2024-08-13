@@ -89,15 +89,16 @@ Your application will be available at http://localhost:3000.
 - **`structures/`**: Components related to layout and feature-specific structures.
   - **`layouts/`**: Components defining the overall page layout.
   - **`features/`**: Components tied to specific features or functionalities.
-    - **`common/`**: Components common for a specific feature.
-    - **`sections/`**: Components representing distinct sections of a feature.
+    - **`name/`**: Components for a specific feature.
+      - **`common/`**: Components common for a specific feature.
+      - **`sections/`**: Components representing distinct sections of a feature.
 
 ## Running Tests
 
 To run components tests with Cypress:
 
 ```bash
-    npm run cypress:component
+npm run cypress:component
 ```
 
 ## Contributing
@@ -108,21 +109,21 @@ Fork the repository and clone your fork locally.
 
 Create a new branch for your changes:
 
-    ```bash
-    git checkout -b my-feature-branch
-    ```
+```bash
+git checkout -b my-feature-branch
+```
 
 Make your changes and commit them:
 
-    ```bash
-    git commit -m "Add some feature"
-    ```
+```bash
+git commit -m "Add some feature"
+```
 
 Push your changes to your fork:
 
-    ```bash
-    git push origin my-feature-branch
-    ```
+```bash
+git push origin my-feature-branch
+```
 
 ## License
 
