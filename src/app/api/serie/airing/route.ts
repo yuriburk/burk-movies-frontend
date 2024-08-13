@@ -20,7 +20,7 @@ export async function GET() {
 
   const movies = {
     ...data,
-    results: mapMovies(data.results)
+    results: mapMovies(data.results, 'serie')
   }
 
   return Response.json(movies)

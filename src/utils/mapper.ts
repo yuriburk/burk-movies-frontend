@@ -1,7 +1,10 @@
 import { Movie } from '@/domain'
-import { MovieDetailsResponse, MovieResponse, ShowResponse } from '@/types/api'
+import { MovieDetailsResponse, MovieResponse, SerieResponse } from '@/types/api'
 
-export const mapMovie = (movie: MovieResponse & ShowResponse): Movie =>
+export const mapMovie = (
+  movie: MovieResponse & SerieResponse,
+  mediaType?: 'movie' | 'serie'
+): Movie =>
   ({
     id: movie.id,
     title: movie.title ?? movie.name,
@@ -11,14 +14,19 @@ export const mapMovie = (movie: MovieResponse & ShowResponse): Movie =>
     backdrop: `https://image.tmdb.org/t/p/w1920_and_h800_multi_faces${movie.backdrop_path}`,
     date: movie.release_date ?? movie.first_air_date,
     popularity: movie.vote_average,
-    mediaType: movie.media_type === 'movie' ? movie.media_type : 'serie'
+    mediaType: mediaType ?? (movie.media_type === 'tv' ? 'serie' : 'movie')
   }) as Movie
 
-export const mapMovies = (movies: (MovieResponse & ShowResponse)[]): Movie[] =>
-  movies.filter((movie) => movie.poster_path).map((movie) => mapMovie(movie))
+export const mapMovies = (
+  movies: (MovieResponse & SerieResponse)[],
+  mediaType?: 'movie' | 'serie'
+): Movie[] =>
+  movies
+    .filter((movie) => movie.poster_path)
+    .map((movie) => mapMovie(movie, mediaType))
 
 export const mapMovieDetails = (
-  movie: MovieDetailsResponse & ShowResponse
+  movie: MovieDetailsResponse & SerieResponse
 ): Movie => ({
   ...mapMovie(movie),
   details: {

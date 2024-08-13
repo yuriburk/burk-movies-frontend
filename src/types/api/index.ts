@@ -16,7 +16,7 @@ export type MovieResponse = {
   vote_count: number
 }
 
-export type ShowResponse = {
+export type SerieResponse = {
   id: number
   backdrop_path: string
   name: string

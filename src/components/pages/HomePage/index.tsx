@@ -2,7 +2,7 @@
 import {
   SearchBannerSection,
   TrendingSection,
-  ShowsAiringSection,
+  SerieAiringSection,
   CinemaSection
 } from '@/components/structures'
 import { Movie, TrendingEnum } from '@/domain'
@@ -30,7 +30,7 @@ const HomePage = ({ trending, cinema, shows }: HomePageProps) => {
         selectedOption={trending.selectedOption}
       />
       <CinemaSection movies={cinema.movies} />
-      <ShowsAiringSection movies={shows.movies} />
+      <SerieAiringSection movies={shows.movies} />
     </main>
   )
 }

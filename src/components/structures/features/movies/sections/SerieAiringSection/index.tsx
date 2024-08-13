@@ -5,9 +5,9 @@ type ShowAiringSectionProps = {
   movies: Movie[]
 }
 
-const ShowsAiringSection = ({ movies }: ShowAiringSectionProps) => {
+const SerieAiringSection = ({ movies }: ShowAiringSectionProps) => {
   return (
-    <section id="shows-airing">
+    <section id="serie-airing">
       <Carousel
         title="Séries No Ar"
         cardsProps={{
@@ -18,4 +18,4 @@ const ShowsAiringSection = ({ movies }: ShowAiringSectionProps) => {
   )
 }
 
-export default ShowsAiringSection
+export default SerieAiringSection

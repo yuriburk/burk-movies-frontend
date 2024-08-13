@@ -1,3 +1,4 @@
+import { MovieResponse } from '@/types/api'
 import { mapMovies } from '@/utils/mapper'
 
 export async function GET(request: Request) {
@@ -23,7 +24,12 @@ export async function GET(request: Request) {
 
   const movies = {
     ...data,
-    results: mapMovies(data.results)
+    results: mapMovies(
+      data.results.map((movie: MovieResponse) => ({
+        ...movie,
+        mediaType: movie.media_type === 'movie' ? 'movie' : 'serie'
+      }))
+    )
   }
 
   return Response.json(movies)

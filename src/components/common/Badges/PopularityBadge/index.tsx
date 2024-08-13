@@ -7,9 +7,9 @@ type PopularityBadgeProps = {
 }
 
 const popularityColor = (popularity: number) => {
-  if (popularity < 25) {
+  if (popularity < 2.5) {
     return 'stroke-rose-500'
-  } else if (popularity < 70) {
+  } else if (popularity < 7.0) {
     return 'stroke-amber-500'
   } else {
     return 'stroke-lime-500'
@@ -34,7 +34,7 @@ const PopularityBadge = ({ popularity, big }: PopularityBadgeProps) => {
           fill="none"
           strokeWidth="2.5"
           strokeDasharray={`${popularityRounded}, 100`}
-          className={popularityColor(popularityRounded)}
+          className={popularityColor(popularity)}
         />
       </svg>
       <div className="flex">

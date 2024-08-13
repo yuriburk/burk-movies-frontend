@@ -9,6 +9,7 @@ import {
 
 type MovieDetailSectionProps = {
   title: string
+  originalTitle: string
   image: string
   backdrop: string
   backdropColor: string
@@ -25,6 +26,7 @@ type MovieDetailSectionProps = {
 
 const MovieDetailSection = ({
   title,
+  originalTitle,
   image,
   backdrop,
   backdropColor,
@@ -43,13 +45,15 @@ const MovieDetailSection = ({
     className="relative"
     style={{ backgroundColor: backdropColor }}
   >
-    <Image
-      src={backdrop}
-      alt="Image"
-      width={1300}
-      height={300}
-      className="absolute -z-10 max-sm:h-[250px] object-cover h-full w-full"
-    />
+    <div>
+      <Image
+        src={backdrop}
+        alt="Image"
+        width={1300}
+        height={300}
+        className="absolute -z-10 max-sm:h-[250px] object-cover h-full w-full"
+      />
+    </div>
     <div className="flex max-sm:flex-col w-full gap-10 p-7 text-white max-container">
       <Image
         id="poster"
@@ -74,9 +78,10 @@ const MovieDetailSection = ({
         <MovieDetailsButtons />
         <MovieDetailsDescription description={description} />
         <MovieDetailsInformation
+          title={originalTitle}
           situation={situation}
-          revenue={revenue}
-          budget={budget}
+          revenue={revenue ?? 0}
+          budget={budget ?? 0}
         />
       </div>
     </div>

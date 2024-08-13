@@ -1,13 +1,13 @@
 import SearchBannerSection from './SearchBannerSection'
 import TrendingSection from './TrendingSection'
-import ShowsAiringSection from './ShowsAiringSection'
+import SerieAiringSection from './SerieAiringSection'
 import CinemaSection from './CinemaSection'
 import MovieDetailSection from './MovieDetailSection'
 
 export {
   SearchBannerSection,
   TrendingSection,
-  ShowsAiringSection,
+  SerieAiringSection,
   CinemaSection,
   MovieDetailSection
 }

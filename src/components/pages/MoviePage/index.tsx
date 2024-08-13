@@ -16,6 +16,7 @@ const MoviePage = ({ movie, backdropColor }: MoviePageProps) => {
         <div>
           <MovieDetailSection
             title={movie.title}
+            originalTitle={movie.originalTitle}
             image={movie.image}
             backdrop={movie.backdrop}
             backdropColor={backdropColor}

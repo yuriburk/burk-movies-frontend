@@ -11,10 +11,12 @@ const Image = (props: ImageProps) => {
   if (typeof props.src === 'string') {
     return (
       <img
+        id={props.id}
         src={props.src}
         alt={props.alt}
         width={props.width}
         height={props.height}
+        className={props.className}
       />
     )
   }
@@ -28,10 +30,12 @@ const Image = (props: ImageProps) => {
 
   return (
     <img
+      id={props.id}
       src={changeURL(src)}
       alt={props.alt}
       width={props.width}
       height={props.height}
+      className={props.className}
     />
   )
 }
